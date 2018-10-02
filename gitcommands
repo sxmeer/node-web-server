@@ -1,0 +1,18 @@
+git init
+git status
+git add app.js
+.gitignore
+
+
+ls -al ~/.ssh
+ssh-keygen -t rsa -b 4096 -C 'sameeryadav2421@gmail.com'
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
+clip < ~/.ssh/id_rsa.pub
+ssh -T git@github.com
+
+
+git commit -m 'initial commit'
+git remote add origin https://github.com/sxmeer/node-web-server.git
+git push -u origin master
+C:\Users\Sameer\.ssh //ssh key folder
