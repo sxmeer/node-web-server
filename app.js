@@ -2,6 +2,7 @@ const express = require('express');
 const hbs = require('hbs');
 var app = express();
 const fs = require('fs');
+const port = process.env.PORT || 3000;
 
 hbs.registerPartials(__dirname+'\\views\\partials'); //for registering partials which can be used from hbs templates
 app.set('view engine','hbs');
@@ -29,8 +30,8 @@ hbs.registerHelper('upperCase',(text)=>{
 })//helper with argument
 
 
-app.listen(3000,()=>{
-    console.log(`started on ${3000}`);
+app.listen(port,()=>{
+    console.log(`started on ${port}`);
 })
 
 
@@ -58,4 +59,3 @@ app.get('/',(req,res)=>{
         msg:'welcome to home page',
     })
 })
-
